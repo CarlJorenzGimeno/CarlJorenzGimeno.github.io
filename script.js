@@ -1,8 +1,8 @@
 const cursor = document.getElementById('coolcursor');
 const navbar = document.querySelector(".navbar");
-const navitem = document.querySelectorAll('.navitem');
+const navitem = $('.navitem');
 const navlist = [...navitem];
-const preview = document.querySelectorAll('.preview');
+const preview = $('.preview');
 
 
 
@@ -15,27 +15,31 @@ document.addEventListener('mousemove', function(event) {
     if (cleft > 300){
         let navleft = -50;
     }
+    //Pop up
     navbar.animate({
         left: navleft + 'px'
     },{duration:500})
 
+    //Center
     ctop = ctop + cursor.style.height/2;
 
+    //Trailing instead of snapping
     cursor.animate({
         left: cleft + 'px',
         top: ctop + 'px'
-    },{duration: 300, fill: "forwards"});
+    },{duration: 500, fill: "forwards"});
 });
 
 
 
-$(".navitem").hover(function(){
-        console.log(navlist.indexOf($(this)));
-        preview[0];
-        preview[navlist.indexOf($(this))].classList.add('show');
-        preview[navlist.indexOf($(this))].classList.remove('hidden');
+navitem.hover(function(){
+        //Only show div corresponding to index
+        var index = $('.navitem').index(this);
+        preview.addClass('hidden');
+        preview.removeClass('show');
+        $(preview[index]).removeClass('hidden');
+        $(preview[index]).addClass('show');
         cursor.style.scale = "1.5";
-        
     }, function(){
         cursor.style.scale = "1";
     });

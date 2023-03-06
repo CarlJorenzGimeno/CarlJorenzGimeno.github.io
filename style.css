@@ -11,12 +11,13 @@ a{
     height: 85vh;
     align-items: center;
     display: flex;
-    width: 100vw;
+    width: fit-content;
     padding: 0;
     z-index: 2;
     transition: all 500ms;
     left: -50vw;
     padding-top: 15vh;
+    padding-right: 5vh;
 }
 
 .navitem{
@@ -57,13 +58,13 @@ a{
   
 .preview {
     color: white;
+    padding-left: 5vw;
 }
 
 .show {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s;
-    background-color: aliceblue;
 }
 
 .textbar{
